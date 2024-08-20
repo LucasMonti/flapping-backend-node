@@ -4,10 +4,11 @@ import {ISuccessResponse} from "../interfaces/utils.interface";
 export const successResponse = async (
   res: Response,
   data: any,
+  status: number,
   message: string
 ) => {
   const body: ISuccessResponse = {
-    status: 200,
+    status,
     data,
     message,
   };

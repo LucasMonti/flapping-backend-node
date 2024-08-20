@@ -1,11 +1,9 @@
-import { IUser } from "../interfaces/user.iterface";
 import User from "../models/userModel";
 
-export const createUserApp = async (body: IUser) => {
+export const findAllUsersApp = async () => {
   try {
-    const {name, email, password} = body;
-    const user = await User.create({name, email, password});
-    return user;
+    const users = await User.findAll();
+    return users;
   } catch (err: any) {
     throw err;
   }

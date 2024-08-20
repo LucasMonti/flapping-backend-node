@@ -7,7 +7,7 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('Database connected.');
-    // await sequelize.sync(); //* Crea las tablas si no existen
+    await sequelize.sync(); //* Crea las tablas si no existen
     app.listen(port, () => {
       console.log(`Servidor escuchando en http://localhost:${port}`);
     });
